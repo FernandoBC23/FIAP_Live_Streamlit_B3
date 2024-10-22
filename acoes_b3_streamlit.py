@@ -26,7 +26,7 @@ for ticker in tickers:
         if not tickerDF.empty:
             # Cálculo das médias móveis
             tickerDF['SMA_50'] = tickerDF['Close'].rolling(window=50).mean()
-            tickerDF['SMA_200'] = tickerDF['Close'].rolling(window=200).mean()
+            # tickerDF['SMA_200'] = tickerDF['Close'].rolling(window=200).mean()
 
             # Layout das informações da empresa
             st.subheader(f"Análise da Ação: {ticker}")
@@ -47,7 +47,7 @@ for ticker in tickers:
             fig = go.Figure()
             fig.add_trace(go.Scatter(x=tickerDF.index, y=tickerDF['Close'], mode='lines', name='Fechamento'))
             fig.add_trace(go.Scatter(x=tickerDF.index, y=tickerDF['SMA_50'], mode='lines', name='Média Móvel 50'))
-            fig.add_trace(go.Scatter(x=tickerDF.index, y=tickerDF['SMA_200'], mode='lines', name='Média Móvel 200'))
+            # fig.add_trace(go.Scatter(x=tickerDF.index, y=tickerDF['SMA_200'], mode='lines', name='Média Móvel 200'))
             fig.update_layout(title=f'Preço de Fechamento e Médias Móveis - {ticker}', xaxis_title='Data', yaxis_title='Preço (R$)')
             st.plotly_chart(fig)
 
