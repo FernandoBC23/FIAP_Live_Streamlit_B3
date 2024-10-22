@@ -6,7 +6,8 @@ st.set_page_config(
     layout='wide'
 )
 
-st.header("**PAINEL DE PREÇO DE FECHAMENTO E DIVIDENDOS DE AÇÕES DA B3**")
+# Título centralizado usando HTML
+st.markdown("<h1 style='text-align: center; color: #1ED760;'>PREÇO DE FECHAMENTO E DIVIDENDOS DE AÇÕES DA B3</h1>", unsafe_allow_html=True)
 
 # Input do usuário
 ticker = st.text_input('Digite o ticker da ação', 'BBAS3')
